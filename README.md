@@ -25,6 +25,10 @@ Aplicación en la que podemos consultar una lista de personajes, cuenta con 2 pa
 - MinSdk 21+ (Android 5.0 or higher)
 
 - Clave privada y pública
+  Para obtener acceso a los datos necesitamos crear los api key (https://developer.marvel.com/)
+  Una vez que las tengamos generadas debemos agregarlas al fichero build.gradle
+      buildConfigField ("String", "MARVEL_PUBLIC_KEY", '"ADD KEY"')
+      buildConfigField ("String", "MARVEL_PRIVATE_KEY", '"ADD KEY"')
 
 
 <a name="dependencies"></a>
@@ -40,9 +44,29 @@ Tenemos dos tipos de productos disponibles, el cual puede cambiar en la opción 
 
 - Dev: Carga los datos del backend configurado en el fichero build.gradle
 
+
 <a name="architecture"></a>
 ## Arquitectura
-//TODO
+La aplicación esté dividida en 4 paquetes
+1. core -- Lógica y recursos compartidos
+2. di -- Dependencias de aplicación
+3. data -- Acceso a datos (Data - Domain Layer)
+4. features -- UI organizado por modelos de negocios y casos de uso (UI Layer)
+
+UI Layer:
+Utilizo MVVM (view(fragments) -> viewmodel -> use case)  
+Las vistas solicitan datos al viewmodel quien a su vez pide los datos al caso de uso correspondiente y los publica utilizando LiveData
+
+Data - Domain Layer  
+Utilizo patrón Repository implementando solamente la fuente remota, se utilizan caso de uso funcional con el objeto Either donde siempre se
+devuelve un resultado (OK, Failure)
+
+Notes:
+- Dagger2: Gestión de dependencias
+- Retrofit2 & moshi: Accesso y mapeo de datos
+- Jetpack components(viewmodel, livedata, lifecycle, navigation component)
+- Glide: Carga de imagenes
+
 
 <a name="todo"></a>
 ## TODO lista
@@ -55,5 +79,7 @@ Tenemos dos tipos de productos disponibles, el cual puede cambiar en la opción 
 - UI testing
 
 - Offline mode
+
+- API key Manager
 
 
