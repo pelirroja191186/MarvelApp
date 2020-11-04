@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <string name="app_name_mock">Marvel.Mock</string>
+    <string name="app_name_dev">Marvel.Dev</string>
+
+    <!-- Character List-->
+    <string name="character_list_title">Personajes</string>
+
+    <!-- Character Detail -->
+    <string name="character_detail_title">Detalle de personaje</string>
+
+    <!-- Errors -->
+    <string name="error_connection_title">No conexión!</string>
+    <string name="error_connection_message">Hemos detectado un problema en su conexión a internet.</string>
+
+    <string name="error_no_defined_title">No definido!</string>
+    <string name="error_no_defined_message">Ops. Hemos detectado un problema</string>
+
+    <string name="error_no_content_title">No content!</string>
+    <string name="error_no_content_message">No hemos encontrado información para mostrarte</string>
+
+    <string name="error_no_authorized_title">No autorizado!</string>
+    <string name="error_no_authorized_message">No tienes acceso a esta funcionalidad</string>
+
+
+</resources>
