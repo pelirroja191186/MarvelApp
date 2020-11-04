@@ -56,6 +56,7 @@ La aplicación está dividida en 4 paquetes
 UI Layer:
 Se utiliza MVVM (view(fragments) -> viewmodel -> use case)  
 Las vistas solicitan datos al viewmodel quien a su vez pide los datos al caso de uso correspondiente y los publica utilizando LiveData.
+Para el acceso desde fragments a xml se utiliza viewBinding
 
 Data - Domain Layer  
 Se utiliza patrón Repository implementando solamente la fuente remota, se utilizan caso de uso funcional con el objeto Either donde siempre se devuelve un resultado (OK, Failure)
