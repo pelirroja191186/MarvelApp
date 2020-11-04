@@ -1,6 +1,5 @@
 package com.yhq.marvel.core.base
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -74,9 +73,8 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     recyclerView.layoutManager as LinearLayoutManager?
 
                 if (!isLoading) {
-                    if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() === listItems.size - 1) {
+                    if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == listItems.size - 1) {
                         isLoading = true
-                        Log.d("load more","load more")
                         loadMore()
                     }
                 }

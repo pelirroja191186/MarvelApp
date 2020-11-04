@@ -30,6 +30,8 @@ Aplicación en la que podemos consultar una lista de personajes de Marvel
       buildConfigField ("String", "MARVEL_PUBLIC_KEY", '"ADD KEY"')
       buildConfigField ("String", "MARVEL_PRIVATE_KEY", '"ADD KEY"')
 
+  ** En caso de no tener las claves correctamente configuradas solamente podrá acceder a la aplicación en modo MOCK
+
 
 <a name="dependencies"></a>
 ## Versiones
